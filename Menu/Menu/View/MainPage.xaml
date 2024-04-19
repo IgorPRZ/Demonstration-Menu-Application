@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Menu.View.MainPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid Margin="0" Padding="0">
+       
+
+        <toolkit:MediaElement Source="embed://cookingbk.mp4" HorizontalOptions="FillAndExpand" 
+                              VerticalOptions="FillAndExpand" x:Name="bkMediaElement"
+                              ShouldShowPlaybackControls="False" ShouldAutoPlay="True" ShouldLoopPlayback="True"
+                              ShouldKeepScreenOn="True"
+                              Aspect="Fill"/>
+
+        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Margin="0,30,0,0">
+            <Path Stroke="#1C110D" StrokeThickness="3" Data="m3.22999,43.32963c264.6667,-117.77818 
+                  529.33334,117.77818 793.99998,0l0,
+                  212.0007c-264.66664,117.77819 -529.33329,-117.77817 -793.99998,0l0,-212.0007z" 
+                  Fill="#1C110D"/>
+            <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="CenterAndExpand">
+                <Label Text="Seja bem vindo" HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="Center" Margin="0" Padding="0"
+                       FontFamily="SP" TextColor="White" FontSize="80" FontAttributes="Bold"/>
+
+                <Label Text="Avignon Bistrô" HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="Center" Margin="0" Padding="0"
+                       FontFamily="SP" TextColor="White" FontSize="80"/>
+            </StackLayout>
+        </Grid>
+
+
+        <Border BackgroundColor="#1C110D" HorizontalOptions="EndAndExpand" 
+                VerticalOptions="EndAndExpand"
+                StrokeThickness="0" 
+                Margin="0,0,0,60"
+                Padding="0,0,0,0"
+                WidthRequest="300">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20,0,20,0" />
+            </Border.StrokeShape>
+            <Button BackgroundColor="#1C110D" Text="Acessar cardápio" FontFamily="OpenSansSemibold"
+                    HorizontalOptions="CenterAndExpand"/>
+        </Border>
+    </Grid>
+    
+</ContentPage>

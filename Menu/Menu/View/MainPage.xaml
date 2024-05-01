@@ -5,45 +5,57 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="MainPage"
              Shell.NavBarIsVisible="False">
+    
+    <Grid Margin="0" Padding="0" BackgroundColor="#080B11">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <Image Source="background.png" 
+               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+               Aspect="AspectFit" Grid.Column="0"/>
 
-    <Grid Margin="0" Padding="0">
-       
+        <Label FontFamily="SP" Text="BurgerLugher"
+            TextColor="White" HorizontalOptions="CenterAndExpand"
+            FontSize="90"/>
 
-        <toolkit:MediaElement Source="embed://cookingbk.mp4" HorizontalOptions="FillAndExpand" 
-                              VerticalOptions="FillAndExpand" x:Name="bkMediaElement"
-                              ShouldShowPlaybackControls="False" ShouldAutoPlay="True" ShouldLoopPlayback="True"
-                              ShouldKeepScreenOn="True"
-                              Aspect="Fill"/>
+        <Label FontFamily="SP" Text="Power by IgorPRZ"
+            TextColor="White" HorizontalOptions="StartAndExpand"
+            FontSize="20" VerticalOptions="EndAndExpand" Margin="10"/>
+        
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Label FontFamily="SP" Text="Menu"
+                   TextColor="White" HorizontalOptions="CenterAndExpand"
+                   FontSize="90" Grid.Column="0"/>
 
-        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Margin="0,30,0,0">
-            <Path Stroke="#1C110D" StrokeThickness="3" Data="m3.22999,43.32963c264.6667,-117.77818 
-                  529.33334,117.77818 793.99998,0l0,
-                  212.0007c-264.66664,117.77819 -529.33329,-117.77817 -793.99998,0l0,-212.0007z" 
-                  Fill="#1C110D"/>
-            <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="CenterAndExpand">
-                <Label Text="Seja bem vindo" HorizontalOptions="CenterAndExpand" 
-                       VerticalOptions="Center" Margin="0" Padding="0"
-                       FontFamily="SP" TextColor="White" FontSize="80" FontAttributes="Bold"/>
+            <Grid Grid.Row="1" BackgroundColor="Transparent">
+                <ListView ItemsSource="{Binding MenuItensList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5">
+                                    <Label Text="{Binding Name}" TextColor="White" FontSize="30"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
 
-                <Label Text="Avignon Bistrô" HorizontalOptions="CenterAndExpand" 
-                       VerticalOptions="Center" Margin="0" Padding="0"
-                       FontFamily="SP" TextColor="White" FontSize="80"/>
-            </StackLayout>
+            <Grid Grid.Row="2" BackgroundColor="White">
+            </Grid>
         </Grid>
-
-
-        <Border BackgroundColor="#1C110D" HorizontalOptions="EndAndExpand" 
-                VerticalOptions="EndAndExpand"
-                StrokeThickness="0" 
-                Margin="0,0,0,60"
-                Padding="0,0,0,0"
-                WidthRequest="300">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="20,0,20,0" />
-            </Border.StrokeShape>
-            <Button BackgroundColor="#1C110D" Text="Acessar cardápio" FontFamily="OpenSansSemibold"
-                    HorizontalOptions="CenterAndExpand"/>
-        </Border>
+        
+        
     </Grid>
     
 </ContentPage>

@@ -15,8 +15,8 @@ namespace Menu.Model
 			set { _name = value; }
 		}
 
-		private double _price;
-		public double Price
+		private decimal _price;
+		public decimal Price
 		{
 			get { return _price; }
 			set { _price = value; }

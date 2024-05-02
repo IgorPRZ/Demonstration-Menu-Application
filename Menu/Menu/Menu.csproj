@@ -57,11 +57,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\CaviarDreams.ttf" />
 	  <None Remove="Resources\Fonts\fonteone.TTF" />
 	  <None Remove="Resources\Fonts\simpleprint.ttf" />
 	  <None Remove="Resources\Images\background.png" />
 	  <None Remove="Resources\Images\cart.png" />
 	  <None Remove="Resources\Images\cookingbk.mp4" />
+	  <None Remove="Resources\Images\drink.png" />
+	  <None Remove="Resources\Images\fries.png" />
+	  <None Remove="Resources\Images\ham.png" />
 	  <None Remove="Resources\Raw\cookingbk.mp4" />
 	</ItemGroup>
 

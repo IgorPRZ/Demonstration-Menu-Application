@@ -18,6 +18,7 @@ namespace Menu
                     fonts.AddFont("fonteone.TTF", "FO");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("CaviarDreams.ttf", "CD");
                 });
 
 #if DEBUG

@@ -23,37 +23,161 @@
 
         <Label FontFamily="SP" Text="Power by IgorPRZ"
             TextColor="White" HorizontalOptions="StartAndExpand"
-            FontSize="20" VerticalOptions="EndAndExpand" Margin="10"/>
-        
-        
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <Label FontFamily="SP" Text="Menu"
-                   TextColor="White" HorizontalOptions="CenterAndExpand"
-                   FontSize="90" Grid.Column="0"/>
+            FontSize="35" VerticalOptions="EndAndExpand" Margin="20,0,0,10"/>
 
-            <Grid Grid.Row="1" BackgroundColor="Transparent">
-                <ListView ItemsSource="{Binding MenuItensList}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid Padding="5">
-                                    <Label Text="{Binding Name}" TextColor="White" FontSize="30"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
 
-            <Grid Grid.Row="2" BackgroundColor="White">
+        <ScrollView Grid.Column="1">
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label FontFamily="SP" Text="Menu"
+                       TextColor="White" HorizontalOptions="CenterAndExpand"
+                       FontSize="90" Grid.Column="0"/>
+
+                <Grid Grid.Row="1" BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>     
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="0" Spacing="30">
+                        <StackLayout Orientation="Horizontal"  Spacing="10" Margin="20,10,0,0">
+                            <Image Source="ham.png" Aspect="AspectFit" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Lanches" TextColor="White" FontSize="25" VerticalOptions="CenterAndExpand"
+                          VerticalTextAlignment="Center" FontAttributes="Bold" FontFamily="CD"/>
+                        </StackLayout>
+
+                        <ListView ItemsSource="{Binding MenuItensList}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="5" Margin="8,0,0,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="6*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding Name}" TextColor="White" 
+                       FontSize="25" FontFamily="CD" Grid.Column="0" Grid.Row="0"/>
+
+                                            <BoxView Grid.Row="1" BackgroundColor="White" HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand" Opacity="0.3" Grid.ColumnSpan="2"/>
+
+                                            <Label Text="{Binding Description}" TextColor="White" 
+                        FontSize="15" FontFamily="CD" Grid.Column="0" Grid.Row="2" 
+                       Opacity="0.7" Margin="5"/>
+
+                                            <!--<BoxView Grid.Column="0" BackgroundColor="Blue"/>
+                <BoxView Grid.Column="1" BackgroundColor="red"/>-->
+
+                                            <!--<Label Text="{Binding Price}" TextColor="White" 
+                       FontSize="20" FontFamily="CD" Grid.Column="1" Grid.Row="0" 
+                       Margin="5" VerticalTextAlignment="Center" VerticalOptions="Center"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>-->
+
+                                            <Label TextColor="White" 
+                       FontSize="20" FontFamily="CD" Grid.Column="1" Grid.Row="0" 
+                       Margin="5" VerticalTextAlignment="Center" VerticalOptions="Center"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="R$ " TextColor="White"/>
+                                                        <Span Text="{Binding Price}" TextColor="White"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                    <!--Lista de Acompanhamentos.-->
+
+                    <StackLayout Orientation="Vertical" Grid.Row="1" Spacing="30">
+                        <StackLayout Orientation="Horizontal"  Spacing="10" Margin="20,10,0,0">
+                            <Image Source="drink.png" Aspect="AspectFit" WidthRequest="30" HeightRequest="30"/>
+                            <Label Text="Bebidas" TextColor="White" FontSize="25" VerticalOptions="CenterAndExpand"
+                                   VerticalTextAlignment="Center" FontAttributes="Bold" FontFamily="CD"/>
+                        </StackLayout>
+
+                        <ListView ItemsSource="{Binding MenuDrinksList}" Grid.Row="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="5" Margin="8,0,0,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="6*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding Name}" TextColor="White" 
+       FontSize="25" FontFamily="CD" Grid.Column="0" Grid.Row="0"/>
+
+                                            <BoxView Grid.Row="1" BackgroundColor="White" HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand" Opacity="0.3" Grid.ColumnSpan="2"/>
+
+                                            <Label Text="{Binding Description}" TextColor="White" 
+        FontSize="15" FontFamily="CD" Grid.Column="0" Grid.Row="2" 
+       Opacity="0.7" Margin="5"/>
+
+                                            <!--<BoxView Grid.Column="0" BackgroundColor="Blue"/>
+<BoxView Grid.Column="1" BackgroundColor="red"/>-->
+
+                                            <!--<Label Text="{Binding Price}" TextColor="White" 
+       FontSize="20" FontFamily="CD" Grid.Column="1" Grid.Row="0" 
+       Margin="5" VerticalTextAlignment="Center" VerticalOptions="Center"
+       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+       FontAttributes="Bold"/>-->
+
+                                            <Label TextColor="White" 
+       FontSize="20" FontFamily="CD" Grid.Column="1" Grid.Row="0" 
+       Margin="5" VerticalTextAlignment="Center" VerticalOptions="Center"
+       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+       FontAttributes="Bold">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="R$ " TextColor="White"/>
+                                                        <Span Text="{Binding Price}" TextColor="White"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                </Grid>
+
+                <Grid Grid.Row="2" BackgroundColor="White">
+                </Grid>
+                
             </Grid>
-        </Grid>
+        </ScrollView>
+     
         
         
     </Grid>
